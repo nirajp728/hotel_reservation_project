@@ -1,12 +1,38 @@
+# Ignore virtual environment
 venv/
+
+# Ignore MLflow tracking files
 mlruns/
-scientific-air-428214-f7-0b2c8d8a5b52.json/
-scientific-air-428214-f7-5fdf319ad847.json/
-test_logger.py/
-testing.py/
-ALL+MATERIALS+-+1.zip/
+
+# Ignore specific credential/secret files
+scientific-air-428214-f7-0b2c8d8a5b52.json /
+scientific-air-428214-f7-5fdf319ad847.json /
+
+# Ignore test scripts
+test_logger.py
+testing.py
+
+# Ignore large zip and extracted files
+ALL+MATERIALS+-+1.zip
 ALL+MATERIALS+-+1/
+
+# Ignore unused or personal project folders
 python/
 github_token/
 notes/
-Hotel_Reservations.csv/
+
+# Ignore data file
+Hotel_Reservations.csv
+
+# Ignore Jupyter checkpoints (optional but recommended)
+**/.ipynb_checkpoints/
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# OS-specific
+.DS_Store
+Thumbs.db
