@@ -8,6 +8,9 @@
     # Set the working directory
     WORKDIR /app
 
+    # Set the PYTHONPATH so Python can find 'src' and other root-level modules
+    ENV PYTHONPATH=/app
+
     # Install system dependencies required by LightGBM
     RUN apt-get update && apt-get install -y --no-install-recommends \
         libgomp1 \
