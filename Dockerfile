@@ -23,11 +23,14 @@
     # Install the package in editable mode
     RUN pip install --no-cache-dir -e .
 
+    # Install LightGBM (required for training pipeline)
+    RUN pip install --no-cache-dir lightgbm
+
     # Train the model before running the application
     RUN python pipeline/training_pipeline.py
 
     # Expose the port that Flask will run on
-    EXPOSE 5000
+    EXPOSE 8000
 
     # Command to run the app
     CMD ["python", "application.py"]
