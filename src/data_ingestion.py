@@ -56,7 +56,8 @@ class DataIngestion:
         try:
             logger.info("Starting data ingestion process")
 
-            #self.download_csv_from_gcp()
+            self.download_csv_from_gcp()
+
             self.split_data()
 
             logger.info("Data ingestion completed sucesfully")  

@@ -4,4 +4,3 @@ data_ingestion
 data_preprocessing
 logger
 model_training
-venv
