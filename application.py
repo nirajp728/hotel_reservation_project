@@ -41,4 +41,4 @@ def index():
 # cancelled = 146,2,132.3,10,19,4,4,1,0,3,0
 
 if __name__=="__main__":
-    app.run(host='0.0.0.0' , port=5050)
+    app.run(host='0.0.0.0' , port=8080)
