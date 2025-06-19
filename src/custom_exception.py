@@ -12,7 +12,7 @@ class CustomException(Exception):
     @staticmethod # we dont need to create custom exception class again nd again to show our custom exception, with the help of @staticmethod our functions and our methods become independent of class creation, we dont need to create our custom exception class again nd again to show our custom error messages
     def get_detailed_error_message(error_message, error_detail:sys):
 
-        _, _, exc_tb = traceback.sys.exc_info() # The exc_info() returns three things out which we want the last one that is traceback
+        _, _, exc_tb = error_detail.exc_info() # The exc_info() returns three things out which we want the last one that is traceback
         file_name = exc_tb.tb_frame.f_code.co_filename  # This will give the filename in which our error occurred
         line_number = exc_tb.tb_lineno # This will give in which line the error occured
 
