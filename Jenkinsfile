@@ -54,6 +54,33 @@ pipeline{
               }
             }
         }
+
+        stage('Deploy to google cloud run'){
+            steps{
+                withCredentials([file(credentialsId : 'gcp-key', variable : 'GOOGLE_APPLICATION_CREDENTIALS')]){
+                    script{
+                       echo 'Deploy to google cloud run.............'
+                       //Triple quotes ares used to write mutliple commands
+                       //Ensure gcloud is available within the path or not
+                       //Acces GCP
+                       //Set project 
+                       //configure docker with GCR, in quiet mode so unnessecary logs aren't shown
+                       //Building docker image
+                       //Pushing docker image to GCP
+                       sh '''
+                       export PATH=$PATH:${GCLOUD_PATH}
+                       gcloud auth activate-service-account --key-file=${GOOGLE_APPLICATION_CREDENTIALS}
+                       gcloud config set project ${GCP_PROJECT}
+                       gcloud run deploy ml-project-hotel-reservation \
+                         --image=gcr.io/${GCP_PROJECT}/ml-project-hotel-reservation:latest \
+                         --platform=managed \
+                         --region=us-central1 \
+                         --allow=unauthenticated 
+                       '''
+                }
+              }
+            }
+        }
     }
         
 
